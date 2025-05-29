@@ -19,18 +19,6 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between px-4 h-[100px] bg-[#242424]">
       {/* menu section  */}
-      {/* <div className="flex gap-4 items-center w-1/3">
-        {[1, 2, 3, 4, 5].map((menu) => (
-          <button
-            onClick={() => {}}
-            className="flex gap-1 text-white text-[20px]"
-            key={menu}
-          >
-            <span>Menu</span>
-            <span>icon</span>
-          </button>
-        ))}
-      </div> */}
       <Navigation />
       {/* logo section  */}
       <div className="w-1/3">
@@ -44,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* end section  */}
-      <div className="flex gap-4 text-white text-[11px] lg:text-[20px]">
+      <div className="flex gap-4 text-white items-baseline text-[12px] lg:text-[20px]  font-semibold">
         {endSectionMenus.map((menu) => (
           <Link key={menu.id} href={menu.link}>
             {menu.label}

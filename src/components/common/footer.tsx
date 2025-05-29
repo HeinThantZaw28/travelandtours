@@ -77,7 +77,7 @@ export const Footer = () => {
             your inbox.
           </span>
         </div>
-        <div className="bg-white rounded-xl w-[829px] flex justify-around items-center ms-20 mt-10 h-[171px] text-[#242424]">
+        <div className="bg-white rounded-xl w-[600px] lg:w-[800px] xl:w-[829px] flex justify-around items-center ms-20 mt-10 h-[171px] text-[#242424]">
           <div className="flex flex-col gap-2">
             <span>YOUR NAME *</span>
             <Input className="bg-[#EFEFEF]" />
@@ -99,7 +99,7 @@ export const Footer = () => {
                 <Link
                   href={link.href}
                   key={link.id}
-                  className="hover:text-gray-300 transition-colors w-[230px] bg-whit flex flex-wrap"
+                  className="hover:text-gray-300 transition-colors bg-whit flex flex-wrap"
                 >
                   {link.title}
                 </Link>

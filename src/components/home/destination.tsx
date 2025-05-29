@@ -21,25 +21,24 @@ const gradientOverlay = `linear-gradient(180deg,
 
 const Destination = () => {
   return (
-    <div className="flex flex-col gap-6 max-w-[1378px] mx-auto px-4">
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col">
-          <span className="text-[30px] font-bold">
-            Explore Tours By Destinations
-          </span>
-          <Button
-            variant={"ghost"}
-            className="-ms-2 max-w-max text-[20px] font-normal"
-          >
-            View all here <ArrowRight className="ml-2" />
-          </Button>
-        </div>
+    <div className="flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto px-4">
+      <div className="flex flex-col">
+        <span className="text-[30px] font-bold">
+          Explore Tours By Destinations
+        </span>
+        <Button
+          variant={"ghost"}
+          className="-ms-2 max-w-max text-[20px] font-normal"
+        >
+          View all here <ArrowRight className="ml-2" />
+        </Button>
       </div>
-      <div className="flex gap-3">
+
+      <div className="flex gap-3 flex-wrap">
         {destinations.map((destination) => (
           <div
             key={destination.id}
-            className="w-[344px] h-[499px] bg-cover bg-center relative rounded-xl"
+            className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl"
             style={{
               backgroundImage: `${gradientOverlay}, url(${destination.image})`,
             }}

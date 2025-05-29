@@ -17,7 +17,7 @@ const promotionsImages = [
 
 export const Promotion = () => {
   return (
-    <div className="py-10 h-screen flex flex-col gap-10 w-full px-20">
+    <div className="py-10 h-full flex flex-col gap-10 w-full max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto">
       <div className="flex justify-center items-center">
         <div className="flex justify-between items-center w-[733px]">
           <Image
@@ -47,13 +47,18 @@ export const Promotion = () => {
       </div>
       <div className="flex flex-wrap gap-1">
         {promotionsImages.map((image) => (
-          <Image
-            src={image}
+          <div
+            className="relative h-[320px] w-[320px] xl:w-[344px] xl:h-[344px] "
             key={image}
-            alt="promotion image"
-            width={265}
-            height={302}
-          />
+          >
+            <Image
+              src={image}
+              key={image}
+              alt="promotion image"
+              fill
+              className="object-cover"
+            />
+          </div>
         ))}
       </div>
     </div>

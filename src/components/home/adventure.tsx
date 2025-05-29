@@ -26,7 +26,7 @@ const adventureOptions = [
 
 export const Adventure = () => {
   return (
-    <div className="py-10 h-screen flex flex-col gap-6 max-w-[1378px] px-20">
+    <div className="py-20 h-full flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto">
       <div className="flex flex-col items-center">
         <span className="text-[30px] font-bold">Your Next Adventure</span>
         <span className="text-[18px] font-medium">
@@ -34,11 +34,11 @@ export const Adventure = () => {
           journey unforgettable.
         </span>
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
         {adventureOptions.map((adventure) => (
           <div className="" key={adventure.id}>
             <div
-              className="w-[344px] h-[499px] bg-cover bg-center relative rounded-xl"
+              className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl"
               style={{
                 backgroundImage: ` url(${adventure.image})`,
               }}

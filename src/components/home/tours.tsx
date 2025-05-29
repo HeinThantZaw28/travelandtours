@@ -33,11 +33,26 @@ const Tours = ({ title, tours }: ToursProps) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [slidesPerGroup, setSlidesPerGroup] = useState(3); // default
 
-  // Group tours into chunks of 3 for each slide
+  // Update number of slides per group based on screen size
+  useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
+      if (width >= 768 && width < 1024) {
+        setSlidesPerGroup(2); // md only
+      } else {
+        setSlidesPerGroup(3); // base or lg+
+      }
+    };
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   const tourGroups = [];
-  for (let i = 0; i < tours.length; i += 3) {
-    tourGroups.push(tours.slice(i, i + 3));
+  for (let i = 0; i < tours.length; i += slidesPerGroup) {
+    tourGroups.push(tours.slice(i, i + slidesPerGroup));
   }
 
   const scrollTo = useCallback(
@@ -63,7 +78,7 @@ const Tours = ({ title, tours }: ToursProps) => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flex flex-col gap-6 max-w-[1378px] mx-auto px-4">
+    <div className="flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1378px] mx-auto px-4">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <span className="text-[30px] font-bold">{title}</span>
@@ -76,7 +91,6 @@ const Tours = ({ title, tours }: ToursProps) => {
         </div>
       </div>
 
-      {/* Embla carousel wrapper with explicit overflow control */}
       <div
         className="embla-wrapper"
         style={{ height: "680px", overflow: "hidden" }}
@@ -91,11 +105,10 @@ const Tours = ({ title, tours }: ToursProps) => {
               >
                 {group.map((tour) => (
                   <div
-                    className="rounded-xl flex-1 shadow-md overflow-hidden"
                     key={tour.id}
-                    style={{ height: "650px", maxHeight: "650px" }}
+                    className="rounded-xl shadow-md overflow-hidden flex-1 h-[580px] md:h-[700px] lg:h-[680px] xl:h-[640px] max-h-[650px]"
                   >
-                    <div className="relative w-full" style={{ height: "50%" }}>
+                    <div className="relative w-full h-[50%] lg:h-[40%] xl:h-[45%] ">
                       <Image
                         src={tour.image || "/placeholder.svg"}
                         alt="place"
@@ -103,16 +116,16 @@ const Tours = ({ title, tours }: ToursProps) => {
                         fill
                       />
                     </div>
-                    {/* CONTENT  */}
-                    <div
-                      className="flex flex-col px-8 mt-4 gap-4"
-                      style={{ height: "calc(50% - 50px)" }}
-                    >
-                      <span className="font-bold text-xl h-[40px]">
+                    <div className="flex flex-col px-6 md:px-8 mt-4 gap-4">
+                      <span className="font-bold text-md xl:text-xl h-[50px] lg:h-[70px] xl:h-[30px]">
                         {tour.title}
                       </span>
-                      <span className="font-semibold">{tour.subTitle}</span>
-                      <span className="">{tour.descriptions}</span>
+                      <span className="font-semibold text-sm lg:text-base">
+                        {tour.subTitle}
+                      </span>
+                      <span className="text-sm lg:text-base">
+                        {tour.descriptions}
+                      </span>
                       <Button
                         className="w-full justify-start items-center"
                         variant={"outline"}
@@ -142,7 +155,6 @@ const Tours = ({ title, tours }: ToursProps) => {
         </div>
       </div>
 
-      {/* Dots indicator */}
       <div className="flex justify-center gap-2 mt-4">
         {scrollSnaps.map((_, index) => (
           <button

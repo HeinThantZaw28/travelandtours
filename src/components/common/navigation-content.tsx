@@ -338,7 +338,7 @@ export const NavigationContents = () => {
   );
   return (
     <div
-      className="w-[900px] bg-white p-6"
+      className="w-[600px] lg:w-[700px] xl:w-[900px] bg-white p-6"
       onMouseLeave={() => setActiveSection(null)}
     >
       {/* Main Section Headers */}
@@ -348,7 +348,7 @@ export const NavigationContents = () => {
             key={dropdown.id}
             onClick={() => setActiveSection(dropdown.value)}
             className={cn(
-              "text-lg font-semibold flex items-center bg-transparent px-2 py-1 rounded",
+              "text-[12px] lg:text-[20px] font-semibold flex items-center bg-transparent px-2 py-1 rounded",
               activeSection === dropdown.value
                 ? "text-black bg-white"
                 : "text-gray-500"
@@ -366,7 +366,7 @@ export const NavigationContents = () => {
           <div className="grid grid-cols-4 gap-6">
             {/* Regions Column */}
             <div className="col-span-1 border-r pr-4">
-              <h4 className="text-sm font-medium text-gray-700 mb-3">
+              <h4 className="text-[12px] lg:text-[20px] font-medium text-gray-700 mb-3">
                 Regions
               </h4>
               <div className="space-y-1">
@@ -378,7 +378,7 @@ export const NavigationContents = () => {
                       setSelectedSubregion("All");
                     }}
                     className={cn(
-                      "w-full flex items-center justify-between text-left bg-gray-200 px-3 py-4 text-sm rounded-md transition-colors hover:bg-black hover:text-white",
+                      "w-full flex items-center justify-between text-left bg-gray-200 px-3 py-4 text-[12px] lg:text-[20px] rounded-md transition-colors hover:bg-black hover:text-white",
                       region.name === selectedRegion && "bg-black text-white"
                     )}
                   >
@@ -402,7 +402,7 @@ export const NavigationContents = () => {
                           key={subregion.name}
                           onClick={() => setSelectedSubregion(subregion.name)}
                           className={cn(
-                            "px-3 py-1 text-sm rounded-md",
+                            "px-3 py-1 text-md rounded-md",
                             subregion.name === selectedSubregion
                               ? "bg-black text-white"
                               : "text-gray-600 hover:bg-gray-100"
@@ -445,7 +445,7 @@ export const NavigationContents = () => {
                               href={`/destinations/${selectedRegion.toLowerCase()}/${country
                                 .toLowerCase()
                                 .replace(" ", "-")}`}
-                              className="block p-2 text-sm text-gray-700 rounded-md hover:bg-black hover:text-white"
+                              className="block p-2 text-[12px] lg:text-[20px] text-gray-700 rounded-md hover:bg-black hover:text-white"
                             >
                               {country}
                             </Link>
@@ -468,7 +468,7 @@ export const NavigationContents = () => {
                   .replace(" ", "-")}`}
                 className="block p-4 rounded-md hover:bg-gray-100 transition-colors border border-gray-200"
               >
-                <div className="text-lg font-medium text-gray-900 mb-1">
+                <div className="text-[12px] lg:text-[20px] font-medium text-gray-900 mb-1">
                   {item.title}
                 </div>
                 <p className="text-sm text-gray-600">{item.description}</p>
