@@ -12,7 +12,7 @@ const buttonLabels = [
 const TravelWithEU = () => {
   const [activeService, setActiveService] = useState(0);
   return (
-    <div className="h-full lg:h-screen flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1390px] mx-auto px-6">
+    <div className="h-full lg:h-screen flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1390px] mx-auto px-6 my-10 lg:my-20">
       <div className="flex flex-col gap-2">
         <h3 className="text-2xl md:text-4xl font-bold">Travel With EU</h3>
         <span className="text-base md:text-xl font-normal">
