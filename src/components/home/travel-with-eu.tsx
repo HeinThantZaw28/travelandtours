@@ -39,11 +39,11 @@ const TravelWithEU = () => {
         ))}
       </div>
       <div className="flex w-full h-full">
-        <div className="w-1/2 h-full relative">
+        <div className="w-1/2 h-full relative rounded-xl">
           <Image
-            src={"/assets/winter.png"}
+            src={"/assets/eutravel.png"}
             alt="service"
-            className="object-cover"
+            className="object-cover rounded-xl"
             fill
           />
         </div>

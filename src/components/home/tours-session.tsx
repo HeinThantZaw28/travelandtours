@@ -10,6 +10,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Enjoy an unforgettable spring getaway to Japan during peak sakura season! This limited-time deal includes airport taxes, baggage allowance and even a free gift.",
+    bestSeller: false,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: true,
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Enjoy an unforgettable spring getaway to Japan during peak sakura season! This limited-time deal includes airport taxes, baggage allowance and even a free gift.",
+    bestSeller: false,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: true,
   },
   {
     id: 6,
@@ -50,6 +55,7 @@ const promotionsToursOptions = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
 ];
 
@@ -61,6 +67,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
   {
     id: 2,
@@ -69,6 +76,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: true,
   },
   {
     id: 3,
@@ -77,6 +85,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
   {
     id: 4,
@@ -85,6 +94,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
   {
     id: 5,
@@ -93,6 +103,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: true,
   },
   {
     id: 6,
@@ -101,6 +112,7 @@ const featureTours = [
     subTitle: "fr $438/pax",
     descriptions:
       "Sunkissed Switzerland is an equally dreamy destination to explore in summer – with its incredible scenery filled in with color, spectacularly blue lakes and awesome weather to boot.",
+    bestSeller: false,
   },
 ];
 

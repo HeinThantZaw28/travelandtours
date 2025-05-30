@@ -13,6 +13,7 @@ interface TourOption {
   title: string;
   subTitle: string;
   descriptions: string;
+  bestSeller: boolean;
 }
 
 interface ToursProps {
@@ -106,8 +107,13 @@ const Tours = ({ title, tours }: ToursProps) => {
                 {group.map((tour) => (
                   <div
                     key={tour.id}
-                    className="rounded-xl shadow-md overflow-hidden flex-1 h-[580px] md:h-[700px] lg:h-[680px] xl:h-[640px] max-h-[650px]"
+                    className="rounded-xl relative shadow-md overflow-hidden flex-1 h-[580px] md:h-[700px] lg:h-[680px] xl:h-[640px] max-h-[650px]"
                   >
+                    {tour.bestSeller && (
+                      <span className="absolute bg-black text-white w-[120px] flex justify-center py-2 top-0 right-0 rounded-xl z-50">
+                        Best Seller
+                      </span>
+                    )}
                     <div className="relative w-full h-[50%] lg:h-[40%] xl:h-[45%] ">
                       <Image
                         src={tour.image || "/placeholder.svg"}
@@ -117,7 +123,7 @@ const Tours = ({ title, tours }: ToursProps) => {
                       />
                     </div>
                     <div className="flex flex-col px-6 md:px-8 mt-4 gap-4">
-                      <span className="font-bold text-md xl:text-xl h-[50px] lg:h-[70px] xl:h-[30px]">
+                      <span className="font-bold text-md xl:text-xl h-[50px] lg:h-[70px] xl:h-[40px]">
                         {tour.title}
                       </span>
                       <span className="font-semibold text-sm lg:text-base">
