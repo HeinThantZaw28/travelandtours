@@ -90,7 +90,7 @@ export default function VerticalBannerCarousel() {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">
         <div className="flex flex-col items-center ">
           <div className="flex gap-4 items-baseline">
-            <h3 className="text-[25px] md:text-[60px] lg:text-[80px] xl:text-[100px] text-white text-start">
+            <h3 className="text-[25px] md:text-[60px] lg:text-[70px] xl:text-[100px] text-white text-start">
               Book the best travel deals
             </h3>
             <div className="relative size-5 md:size-10 lg:size-15">
@@ -107,7 +107,7 @@ export default function VerticalBannerCarousel() {
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-10">
+      <div className="absolute right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-10">
         <div className="flex flex-col space-y-2">
           {bannerSlides.map((_, index) => (
             <button
