@@ -3,14 +3,14 @@ import { ChevronDown, CircleChevronRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-const subDropdown = [
+export const subDropdown = [
   { id: 1, label: "Group Holidays", value: "group-holidays" },
   { id: 2, label: "Flexi Holidays", value: "flexi-holidays" },
   { id: 3, label: "Themed Journeys", value: "themed-journeys" },
   { id: 4, label: "Cruise", value: "cruise" },
 ];
 
-const regions = [
+export const regions = [
   {
     name: "Asia",
     subregions: [
@@ -293,14 +293,14 @@ const regions = [
 
 // ... (keep the flexiHolidays, themedJourneys, cruises arrays the same)
 
-const flexiHolidays = [
+export const flexiHolidays = [
   { title: "City Breaks", description: "Short urban getaways" },
   { title: "Beach Holidays", description: "Relaxing coastal destinations" },
   { title: "Adventure Tours", description: "Thrilling outdoor experiences" },
   { title: "Cultural Tours", description: "Immersive cultural experiences" },
 ];
 
-const themedJourneys = [
+export const themedJourneys = [
   {
     title: "Family-Friendly",
     description: "Fun for all ages",
@@ -323,7 +323,7 @@ const themedJourneys = [
   },
 ];
 
-const cruises = [
+export const cruises = [
   { title: "Mediterranean", description: "Explore the Mediterranean coast" },
   { title: "Caribbean", description: "Tropical island hopping" },
   { title: "Northern Lights", description: "Arctic cruise experiences" },

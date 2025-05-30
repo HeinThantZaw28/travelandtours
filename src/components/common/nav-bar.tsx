@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Navigation } from "./navigation-menu";
-
-// const menuOptions =[
-//     {
-//         title:"Plan Your Journey",
-//         children:
-//     }
-// ]
+import { Menu, X } from "lucide-react";
+import { Button } from "../ui/button";
+import MobileNavbar from "./mobile-navbar";
 
 const endSectionMenus = [
   { id: 1, link: "/travel-essentials", label: "Travel Essentials" },
@@ -16,13 +12,30 @@ const endSectionMenus = [
 ];
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-between px-4 h-[100px] bg-[#242424]">
-      {/* menu section  */}
-      <Navigation />
-      {/* logo section  */}
-      <div className="w-1/3">
-        <div className="relative lg:w-[100px] lg:h-[100px] w-[60px] h-[60px]">
+    <div className="relative">
+      {/* Main Navbar */}
+      <div className="flex items-center justify-between px-4 h-[100px] bg-black">
+        {/* Desktop Navigation (lg and up) */}
+        <div className="hidden md:block">
+          <Navigation />
+        </div>
+
+        {/* Mobile Menu Button (below lg) */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-white"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
+
+        {/* Logo (centered on mobile) */}
+
+        <div className="relative lg:size-[100px] size-[60px]">
           <Image
             alt="logo"
             src={"/assets/eulogo.png"}
@@ -30,14 +43,20 @@ const Navbar = () => {
             className="object-contain"
           />
         </div>
+
+        {/* End Section (right side) */}
+        <div className="flex gap-4 text-white items-baseline text-[12px] lg:text-[20px] font-semibold">
+          {endSectionMenus.map((menu) => (
+            <Link key={menu.id} href={menu.link}>
+              {menu.label}
+            </Link>
+          ))}
+        </div>
       </div>
-      {/* end section  */}
-      <div className="flex gap-4 text-white items-baseline text-[12px] lg:text-[20px]  font-semibold">
-        {endSectionMenus.map((menu) => (
-          <Link key={menu.id} href={menu.link}>
-            {menu.label}
-          </Link>
-        ))}
+
+      {/* Mobile Navigation Menu (below lg) */}
+      <div className="block md:hidden relative">
+        {mobileMenuOpen && <MobileNavbar />}
       </div>
     </div>
   );

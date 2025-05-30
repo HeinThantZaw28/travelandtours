@@ -40,7 +40,9 @@ const Tours = ({ title, tours }: ToursProps) => {
   useEffect(() => {
     const updateSlides = () => {
       const width = window.innerWidth;
-      if (width >= 768 && width < 1024) {
+      if (width < 768) {
+        setSlidesPerGroup(1);
+      } else if (width >= 768 && width < 1024) {
         setSlidesPerGroup(2); // md only
       } else {
         setSlidesPerGroup(3); // base or lg+
@@ -79,13 +81,13 @@ const Tours = ({ title, tours }: ToursProps) => {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1378px] mx-auto px-4">
+    <div className="flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1378px] mx-auto px-4">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
-          <span className="text-[30px] font-bold">{title}</span>
+          <span className="text-[18px] md:text-[30px] font-bold">{title}</span>
           <Button
             variant={"ghost"}
-            className="-ms-2 max-w-max text-[20px] font-normal"
+            className="-ms-2 max-w-max text-[10px] md:text-[20px] font-normal"
           >
             View all here <ArrowRight className="ml-2" />
           </Button>
@@ -107,10 +109,10 @@ const Tours = ({ title, tours }: ToursProps) => {
                 {group.map((tour) => (
                   <div
                     key={tour.id}
-                    className="rounded-xl relative shadow-md overflow-hidden flex-1 h-[580px] md:h-[700px] lg:h-[680px] xl:h-[640px] max-h-[650px]"
+                    className="rounded-xl relative shadow-md overflow-hidden flex-1 md:h-[700px] lg:h-[680px] xl:h-[640px] max-h-[650px]"
                   >
                     {tour.bestSeller && (
-                      <span className="absolute bg-black text-white w-[120px] flex justify-center py-2 top-0 right-0 rounded-xl z-50">
+                      <span className="absolute bg-black text-white text-[13px] w-[100px] md:w-[120px] flex justify-center py-2 top-0 right-0 rounded-xl z-50">
                         Best Seller
                       </span>
                     )}
@@ -123,7 +125,7 @@ const Tours = ({ title, tours }: ToursProps) => {
                       />
                     </div>
                     <div className="flex flex-col px-6 md:px-8 mt-4 gap-4">
-                      <span className="font-bold text-md xl:text-xl h-[50px] lg:h-[70px] xl:h-[40px]">
+                      <span className="font-bold text-sm md:text-base xl:text-xl h-[35px] md:h-[50px] lg:h-[70px] xl:h-[40px]">
                         {tour.title}
                       </span>
                       <span className="font-semibold text-sm lg:text-base">

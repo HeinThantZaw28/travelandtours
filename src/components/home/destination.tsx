@@ -21,14 +21,14 @@ const gradientOverlay = `linear-gradient(180deg,
 
 const Destination = () => {
   return (
-    <div className="flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto px-4">
+    <div className="flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1378px] mx-auto px-4">
       <div className="flex flex-col">
-        <span className="text-[30px] font-bold">
+        <span className="text-[18px] md:text-[30px] font-bold">
           Explore Tours By Destinations
         </span>
         <Button
           variant={"ghost"}
-          className="-ms-2 max-w-max text-[20px] font-normal"
+          className="-ms-2 max-w-max text-[10px] md:text-[20px] font-normal"
         >
           View all here <ArrowRight className="ml-2" />
         </Button>
@@ -38,12 +38,12 @@ const Destination = () => {
         {destinations.map((destination) => (
           <div
             key={destination.id}
-            className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl"
+            className="w-[300px] lg:w-[310px] xl:w-[320px] h-[499px] bg-cover bg-center relative rounded-xl"
             style={{
               backgroundImage: `${gradientOverlay}, url(${destination.image})`,
             }}
           >
-            <span className="absolute bottom-10 ps-10 z-20 pointer-events-none text-white text-3xl font-bold flex items-center gap-2">
+            <span className="absolute bottom-10 ps-10 z-20 pointer-events-none text-white text-[20px] md:text-[30px] lg:text-[34px] font-bold flex items-center gap-2">
               {destination.title}
               <ArrowRight />
             </span>

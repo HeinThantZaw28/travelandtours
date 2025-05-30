@@ -17,40 +17,64 @@ const promotionsImages = [
 
 export const Promotion = () => {
   return (
-    <div className="py-10 h-full flex flex-col gap-10 w-full max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto">
-      <div className="flex justify-center items-center">
-        <div className="flex justify-between items-center w-[733px]">
-          <Image
-            src={"/assets/eulogo.png"}
-            alt="logo"
-            width={100}
-            height={100}
-          />
-          <div className="flex flex-col text-lg">
-            <span className="">EUHOLIDAYS</span>
-            <span>@euholidays</span>
+    <div className="flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1378px] mx-auto px-4">
+      <div className="flex justify-center items-center w-full px-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full max-w-[733px] gap-4 sm:gap-0">
+          {/* Logo and Username */}
+          <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-start">
+            <div className="size-10 md:size-16 relative">
+              <Image
+                src={"/assets/eulogo.png"}
+                alt="logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col text-base sm:text-lg">
+              <span className="font-medium">EUHOLIDAYS</span>
+              <span className="text-sm sm:text-base">@euholidays</span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span>1,490</span>
-            <span>Posts</span>
+
+          {/* Stats - Mobile (horizontal) */}
+          <div className="flex sm:hidden justify-between w-full">
+            <div className="flex flex-col items-center">
+              <span className="font-medium">1,490</span>
+              <span className="text-sm">Posts</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-medium">10.8k</span>
+              <span className="text-sm">Followers</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-medium">88</span>
+              <span className="text-sm">Following</span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span>10.8k</span>
-            <span>Followers</span>
+
+          {/* Stats - Desktop (vertical) */}
+          <div className="hidden sm:flex items-center gap-6">
+            <div className="flex flex-col items-center">
+              <span className="font-medium">1,490</span>
+              <span>Posts</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-medium">10.8k</span>
+              <span>Followers</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="font-medium">88</span>
+              <span>Following</span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span>88</span>
-            <span>Following</span>
-          </div>
-          <Button>Follow</Button>
+
+          {/* Follow Button */}
+          <Button className="w-full sm:w-auto mt-2 sm:mt-0 px-6">Follow</Button>
         </div>
       </div>
       <div className="flex flex-wrap gap-1">
         {promotionsImages.map((image) => (
-          <div
-            className="relative h-[320px] w-[320px] xl:w-[344px] xl:h-[344px] "
-            key={image}
-          >
+          <div className="relative size-[320px] xl:size-[265px] " key={image}>
             <Image
               src={image}
               key={image}

@@ -43,8 +43,10 @@ export const Theme = () => {
   return (
     <div className="bg-[#EFEFEF] h-full w-full py-20">
       <div className="flex flex-col mx-auto items-center gap-6 ">
-        <div className="flex flex-col">
-          <span className="text-[30px] font-bold">Explore Tours By Themes</span>
+        <div className="flex flex-col items-center">
+          <span className="text-[18px] md:text-[30px] font-bold">
+            Explore Tours By Themes
+          </span>
           <Button
             variant={"ghost"}
             className="-ms-2 max-w-max text-[20px] font-normal"
@@ -53,17 +55,43 @@ export const Theme = () => {
           </Button>
         </div>
 
-        <div className="flex justify-center w-full h-full">
-          <div className="max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto flex flex-wrap gap-3">
+        {/* <div className="flex justify-center w-full h-full">
+          <div className="max-w-[340px] md:max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] flex flex-col md:flex-wrap gap-3 bg-amber-300">
             {themeOptions.map((destination) => (
               <div
                 key={destination.id}
-                className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl p-10 flex flex-col justify-between text-white "
+                className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl p-10 flex flex-col justify-between text-white"
                 style={{
                   backgroundImage: `${gradientOverlay}, url(${destination.image})`,
                 }}
               >
-                <span className="text-white text-[27px] font-bold">
+                <span className="text-white text-[23px] md:text-[27px] font-bold">
+                  {destination.title}
+                </span>
+                <div className="flex flex-col gap-6">
+                  <span className="text-xl text-white font-semibold">
+                    {destination.descriptions}
+                  </span>
+                  <Button variant={"secondary"} className="max-w-max">
+                    View More
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div> */}
+
+        <div className="flex gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1378px] mx-auto px-4">
+          <div className="flex gap-3 flex-wrap">
+            {themeOptions.map((destination) => (
+              <div
+                key={destination.id}
+                className="p-10 flex flex-col justify-between text-white w-[300px] lg:w-[310px] xl:w-[320px] h-[499px] bg-cover bg-center relative rounded-xl"
+                style={{
+                  backgroundImage: `${gradientOverlay}, url(${destination.image})`,
+                }}
+              >
+                <span className="text-white text-[23px] md:text-[27px] font-bold">
                   {destination.title}
                 </span>
                 <div className="flex flex-col gap-6">

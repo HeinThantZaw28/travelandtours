@@ -26,10 +26,12 @@ const adventureOptions = [
 
 export const Adventure = () => {
   return (
-    <div className="py-20 h-full flex flex-col gap-6 max-w-[654px] lg:max-w-[1000px]  xl:max-w-[1390px] mx-auto">
+    <div className="flex flex-col gap-6 max-w-[340px] md:max-w-[654px] lg:max-w-[1000px] xl:max-w-[1378px] mx-auto px-4 lg:my-20">
       <div className="flex flex-col items-center">
-        <span className="text-[30px] font-bold">Your Next Adventure</span>
-        <span className="text-[18px] font-medium">
+        <span className="text-[18px] md:text-[30px] font-bold">
+          Your Next Adventure
+        </span>
+        <span className="text-base md:text-xl font-normal">
           Join thousands of happy travellers who trust EU Holidays to make their
           journey unforgettable.
         </span>
@@ -38,7 +40,7 @@ export const Adventure = () => {
         {adventureOptions.map((adventure) => (
           <div className="" key={adventure.id}>
             <div
-              className="w-[300px] lg:w-[310px] xl:w-[330px] h-[499px] bg-cover bg-center relative rounded-xl"
+              className="w-[300px] lg:w-[310px] xl:w-[320px] h-[499px] bg-cover bg-center relative rounded-xl"
               style={{
                 backgroundImage: ` url(${adventure.image})`,
               }}
@@ -48,8 +50,10 @@ export const Adventure = () => {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-4xl">{adventure.title}</span>
-              <Button variant={"ghost"} className="max-w-max -ms-1">
+              <span className="text-xl font-semibold lg:text-4xl">
+                {adventure.title}
+              </span>
+              <Button variant={"ghost"} className="max-w-max -ms-2 lg:-ms-1">
                 View more <ArrowRight />
               </Button>
             </div>

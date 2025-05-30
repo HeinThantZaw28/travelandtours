@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import HeroFilter from "./hero-filter";
+import Image from "next/image";
 
 interface BannerSlide {
   id: number;
@@ -68,7 +69,7 @@ export default function VerticalBannerCarousel() {
   )`;
 
   return (
-    <div className="relative h-[675px] w-full overflow-hidden">
+    <div className="relative h-[650px] md:h-[675px] w-full overflow-hidden">
       {/* Embla Carousel Container */}
       <div className="h-full" ref={emblaRef}>
         <div className="flex flex-col h-full">
@@ -86,7 +87,24 @@ export default function VerticalBannerCarousel() {
       </div>
 
       {/* Filter */}
-      <HeroFilter />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-full px-4">
+        <div className="flex flex-col items-center ">
+          <div className="flex gap-4 items-baseline">
+            <h3 className="text-[25px] md:text-[60px] lg:text-[80px] xl:text-[100px] text-white text-start">
+              Book the best travel deals
+            </h3>
+            <div className="relative size-5 md:size-10 lg:size-15">
+              <Image
+                src={"/assets/heading.png"}
+                alt="search_arrow"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <HeroFilter />
+        </div>
+      </div>
 
       {/* Dot Indicators */}
       <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-10">
